@@ -1,0 +1,42 @@
+<style>
+  #videoContainer {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+  }
+  #meuVideo {
+    width: 100%;
+  }
+  #overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+</style>
+
+<div id="videoContainer">
+  <video id="meuVideo" muted>
+    <source src="Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster).mp4" type="video/mp4">
+    Seu navegador não suporta vídeo HTML5.
+  </video>
+
+  <div id="overlay">aperta, pode confiar</div>
+</div>
+
+<script>
+  const video = document.getElementById('meuVideo');
+  const overlay = document.getElementById('overlay');
+
+  overlay.addEventListener('click', () => {
+    video.muted = false;
+    video.play();
+    overlay.style.display = 'none';
+  });
+</script>
